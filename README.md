@@ -58,7 +58,7 @@ Addition to these textual data, some additional data that was present in the raw
 - **Classification:** `Accuracy`, `f1-score`, `Confusion Matrix`  
 - **Regression:** `Mean Absolute Error (MAE)`, `Root Mean Squared Error (RMSE)`  
 
-## 📊Model Results
+## Model Results
 1. **Classification:**
    
 |        Model       |  Accuracy | F1-Score (Easy) | F1-Score (Med.) | F1-Score (Hard) |
