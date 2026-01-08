@@ -22,7 +22,7 @@ Addition to these textual data, some additional data that was present in the raw
 ## Approach and Models Used
 
 ### Data Preprocessing
-- Raw data in .jsonl format converted to .csv format
+- Raw data in `.jsonl` format converted to `.csv` format
 - Analyzing the data before use, includes:
     - Class-wise no. of problems
     - Class-wise Min., Max., and Median scores
@@ -31,11 +31,13 @@ Addition to these textual data, some additional data that was present in the raw
 - Handling missing values
 - Converting all text fields into single text field (user_input)
 - Differentiating Title, Description, input/output description in user_input
+- Finally Splitting the data into two parts- Training (80% of data) and Testing (20% of data)
 
 ### Feature Extraction
 - Text-based features using TF-IDF (Term Frequency-Inverse Document Frequency)
 - TF-IDF is used to mark words according to their frequency
-- Numerical features (e.g., count of keywords, arithmetic operations, etc. )  
+- Numerical features (e.g., count of keywords, arithmetic operations, etc. )
+- Keywords include `greedy`,`dp`,`dynamic programming`,`tree`,`graph`,`dfs`,`bfs`,`two pointers`,`binary search`,`bitmasks`,`dfs`,`combinatorics`  
 
 ### Models
 1. **Classification Model** :  Predicts class-wise difficulty (Easy / Medium / Hard)
@@ -53,8 +55,8 @@ Addition to these textual data, some additional data that was present in the raw
 ---
 
 ### Evaluation Metrics
-- **Classification:** Accuracy, f1-score, Confusion Matrix  
-- **Regression:** Mean Absolute Error (MAE), Root Mean Squared Error (RMSE)  
+- **Classification:** `Accuracy`, `f1-score`, `Confusion Matrix`  
+- **Regression:** `Mean Absolute Error (MAE)`, `Root Mean Squared Error (RMSE)`  
 
 ## 📊Model Results
 1. **Classification:**
@@ -71,7 +73,7 @@ Addition to these textual data, some additional data that was present in the raw
 - Multinomial NB: It predicts almost all problems as Medium
 - Random Forest: It is mainly confused between Easy-Medium and sometimes between Medium-Hard
 
-- Final Classifier used: Random Forest Classifier
+- Final Classifier used: `Random Forest Classifier`
 
 2. **Regression:**
    
@@ -82,11 +84,39 @@ Addition to these textual data, some additional data that was present in the raw
 |   Random Forest    | 1.672     | 2.022           |
 |   Gradient Boost   | 1.687     | 2.015           |
 
-- Final Regressor used: Gradient Boosting Regressor
+- Final Regressor used: `Gradient Boosting Regressor`
 ---
 
 ## Web-Application
 It is a Streamlit based interactive interface where users can submit the required text fields of a programming problem and can get a difficulty class and score on the basis of the textual data only. Predictions are made, based on the final ML models that performed best during experimental phase.
 
 ## Steps to run project locally
+### 1. Clone the repository
+```bash
+git clone https://github.com/VEDxyz7/AutoJudge.git
+cd AutoJudge
+```
 
+### 2. Create and activate a virtual environment
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+
+### 3. Install Required dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Run the Streamlit Web Application
+```bash
+streamlit run app.py
+```
+
+### 5. Open the application in browser
+```
+http://localhost:8501
+```
+### 6. Use the application
+- Enter the required input fields
+- Predict Class difficulty and Score 
